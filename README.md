@@ -78,7 +78,7 @@ The AWS instance used to deploy the application was to small in ram. This was di
 
 * I would run the nodes after deploying the application which will bring the corda network online. This will give me first hand experince interacting with the nodes, runnning a flow and seeing how the nodes work together and trasaction/contracts are made between partys in privacy.
 
-* I would become more familiar with java as CorApps are created with this language.
+* I would become more familiar with java as CordApps are created with this language.
 
 
 ---
