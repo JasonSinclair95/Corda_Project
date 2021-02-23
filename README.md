@@ -76,6 +76,8 @@ The AWS instance used to deploy the application was to small in ram. This was di
 
 * I would have fully automated the process of deploying this cordapp, installing Gradel etc.. 
 
+* I would run the nodes after deploying the application which will bring the corda network onlin. this will give me first hand experince interacting with the nodes, runnning a flow and seeing how the nodes work together and trasaction/contracts are made between partys in privacy.
+
 ---
 
 ## Author
