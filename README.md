@@ -5,11 +5,11 @@
 ---
 
 ### Contents
-1. [Critical Review](#Executive-Summary-&-Critical-Review)
+1. [Critical Review](#Executive-Summary)
     1. My Method
     1. Summary
 
-2. [Architecture using Terrafrom](#Architecture_using_Terrafrom) 
+2. [Architecture and Terraform](#Architecture) 
 
 3. [Ansible](#Ansible)
 
@@ -17,7 +17,7 @@
     1. Identified Issues
     1. Future Improvements
 
-8. [license](#Mit-Licence)
+8. [License](#License)
 
 ## Executive-Summary
 ### My method
@@ -31,7 +31,7 @@ To summarise the application was successfully deployed manually as seen below. A
 ![](Documents/deployment.png) 
 
 
-## Architecture using Terrafrom
+## Architecture
 
 Using Terrafrom a VPC was created with an internet gateway. This internet gateway gave access to all resources inside the VPC, allowing them to connect to the internet and the internet to them. the route table was created to direct the incoming traffic from the internet gateway to the public subnet. Also Security groups had to be configured, this would allow ssh from my local machine into this instance or even access onto the front end of the CoDapp application on port 5005. 
 
@@ -68,7 +68,7 @@ Jason Sinclair
 ## Acknowledgments
 * the R3 team for giving me oportunity to deploy my first CorDapp and showcase my skillset with Devop Technooloiegs.
 
-## MIT License
+## License
 
 Copyright (c) 2021 JasonSinclair95
 
