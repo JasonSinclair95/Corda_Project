@@ -1,6 +1,6 @@
 # Corda_Project
 
-### objective : To deploy an examlpe coDapp onto a linux public cloud machine using automation technologies.
+### objective : To deploy an examlpe Corda application onto a linux public cloud machine using automation technologies.
 
 ---
 
@@ -25,7 +25,7 @@
 ### My method
 sprint 1: Deploy the application manually. This would give me first hand experience with deploying a CorDapp. Along with this, the exact requirements which is needed to be configured inside the Ansible-playbook files. Two bash scripts was created to install ansible and terraform.
 
-sprint 2: Automate this process taking what has been learnt from sprint 1. The automation tools consist of Terraform and Ansible and the the cloud provided AWS. Terraform will be used to provision the environment for the linux virtual machine hosted on AWS, Ansible would then make all installations on that server so that the CoDapp can be deployed.
+sprint 2: Automate this process taking what has been learnt from sprint 1. The automation tools consist of Terraform and Ansible and the the cloud provided AWS. Terraform will be used to provision the infurstructure for the linux virtual machine hosted on AWS, Ansible would then make all installations on that server so that the CorDapp can be deployed.
 
 ---
 
@@ -39,7 +39,7 @@ To summarise the application was successfully deployed manually as seen below. A
 
 ## Architecture
 
-Using Terrafrom a VPC was created with an internet gateway. This internet gateway gave access to all resources inside the VPC, allowing them to connect to the internet and the internet to them. The route table was created to direct the incoming traffic from the internet gateway to the public subnet. Also Security groups had to be configured, this would allow ssh from my local machine into this instance or even access onto the front end of the CoDapp application on port 5005. 
+Using Terrafrom a VPC was created with an internet gateway. This internet gateway gave access to all resources inside the VPC, allowing them to connect to the internet and the internet to them. The route table was created to direct the incoming traffic from the internet gateway to the public subnet. Also Security groups had to be configured, this would allow ssh from my local machine into this instance or even access onto the front end of the CorDapp application on port 5005. 
 
 ![](Documents/archi.png)
 
@@ -47,7 +47,7 @@ Using Terrafrom a VPC was created with an internet gateway. This internet gatewa
 
 
 ## Ansible
-As mentioned above, to confiugure the linux machine three files was created. A file to install OpenJDK-8, a file to clone down the CoDapp sample application and a file to to install gradel 5.4.1 as this is the only version which works with Corda. The Ansible config file has been disclosed for privacy and to not export the ip address of the virtual machine. For security purposes an aws key was used to ssh into the machine so the public key had to be copied from the local machine and placed inside the instance, in order to run any Ansible commands. Below is an example of an successful playbook execution.
+As mentioned above, to confiugure the linux machine three files was created. A file to install OpenJDK-8, a file to clone down the CorDapp sample application and a file to to install gradel 5.4.1 as this is the only version which works with Corda. The Ansible config file has been disclosed for privacy and to not export the ip address of the virtual machine. For security purposes an aws key was used to ssh into the machine so the public key had to be copied from the local machine and placed inside the instance, in order to run any Ansible commands. Below is an example of an successful playbook execution.
 
 ![](Documents/anisbleplay.png)
 
@@ -63,7 +63,7 @@ In conclusion, I followed the requirements set by the R3 team and my sprints, wh
 
 Using Ansible to curl gradel5.4.1 from the distributor. The curl command would work manually, hence why the application was deployed manually. However, when using this command inside the yaml file the website could not be reached and returned an error. I have posted a question on stack overflow to help with this however while I wait I have attempted the following... I have tried to utilise the "user data" module inside the ec2 resource in terraform. In theory upon starting the instance on aws ,a bash script would be run installing gradel using the curl command. Although the script ran, the zip file still did not curl. For future self development I will try to install home-brew using the Ansible-playbook and then running a following play to install gradel 5.4.1 using brew.
 
-The AWS instance used to deploy the application was to small in ram. This was discovered when trying to build the nodes inside the sample application. The solution was to change the ec2 resource inside the terraform file from a t2-micro to a t2 medium. 
+The AWS instance used to deploy the application was to small. This was discovered when trying to build the nodes inside the sample application. The solution was to change the ec2 resource inside the terraform file from a t2-micro to a t2 medium. 
 
 ---
 
@@ -75,6 +75,11 @@ The AWS instance used to deploy the application was to small in ram. This was di
 * Jenkins would be used to allow developers to continuously integrate new code into the cordapp_example without effecting the experience of the user. Jenkins would then be triggered a push to github.
 
 * I would have fully automated the process of deploying this cordapp, installing Gradel etc.. 
+
+* I would run the nodes after deploying the application which will bring the corda network online. This will give me first hand experience interacting with the nodes, runnning a flow and seeing how the nodes work together and trasaction/contracts are made between partys in privacy.
+
+* I would become more familiar with java as CordApps are created with this language.
+
 
 ---
 
