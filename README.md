@@ -5,11 +5,11 @@
 ---
 
 ### Contents
-1. [Executive Summary & Critical Review](#Executive-Summary-&-Critical-Review)
+1. [Critical Review](#Executive-Summary-&-Critical-Review)
     1. My Method
     1. Summary
 
-2. [Architecture](#Architecture) 
+2. [Architecture using Terrafrom](#Architecture_using_Terrafrom) 
 
 3. [Ansible](#Ansible)
 
@@ -19,6 +19,7 @@
 
 8. [license](#Mit-Licence)
 
+## Executive-Summary
 ### My method
 sprint 1: Deploy the application manually. This would give me fist hand experience with deploying a CorDapp. Along with this exact requirements which is needed, to be configured inside the Ansible-playbook files. To bash scripts was created to install ansible and terraform.
 
