@@ -41,7 +41,7 @@ To summarise the application was successfully deployed manually as seen below. A
 
 Using Terrafrom a VPC was created with an internet gateway. This internet gateway gave access to all resources inside the VPC, allowing them to connect to the internet and the internet to them. The route table was created to direct the incoming traffic from the internet gateway to the public subnet. Also Security groups had to be configured, this would allow ssh from my local machine into this instance or even access onto the front end of the CoDapp application on port 5005. 
 
-![](Documents/architecture.png)
+![](Documents/archi.png)
 
 ---
 
