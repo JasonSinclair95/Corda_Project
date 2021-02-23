@@ -34,7 +34,7 @@ variable "vpc_security_group_ids" {
 variable "ingress_ports" {
   type        = list(number)
   description = "List of ingress ports"
-  default     = [80, 4200, 9966, 8080, 22]
+  default     = [22]
 }
 
 variable "open-internet" {
