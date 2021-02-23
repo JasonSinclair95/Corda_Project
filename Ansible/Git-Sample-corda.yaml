@@ -1,0 +1,10 @@
+---
+- hosts: servers
+  become: true
+
+  tasks:
+    - name: git clone corda example
+      git:
+        repo: "https://github.com/corda/samples-java.git"
+        dest:  '/home/ubuntu/R3_project'
+  
