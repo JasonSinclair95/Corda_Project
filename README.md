@@ -2,6 +2,23 @@
 
 ### objective : To deploy an examlpe coDapp onto a linux public cloud machine using automation technologies.
 
+---
+
+### Contents
+1. [Executive Summary & Critical Review](#Executive-Summary-&-Critical-Review)
+    1. My Method
+    1. Summary
+
+2. [Architecture](#Architecture) 
+
+3. [Ansible](#Ansible)
+
+6. [Conclusion](#Conclusion)
+    1. Identified Issues
+    1. Future Improvements
+
+8. [license](#Mit-Licence)
+
 ### My method
 sprint 1: Deploy the application manually. This would give me fist hand experience with deploying a CorDapp. Along with this exact requirements which is needed, to be configured inside the Ansible-playbook files. To bash scripts was created to install ansible and terraform.
 
@@ -29,13 +46,13 @@ Below is the files used to provision the environment on the instance. A file to 
 
 In conclusion, I followed the requirements set by the R3 team and my sprints, which resulted in successfully deploying a Corda application. Working on a feature branch allowed me to work without worrying about breaking the application as the master branch always had the working code on-it. Although the application could not be completed automated, i have broadened my knowledge in using Ansible-playbook to automate tasks across virtual machines, Terraform to architect an environment on AWS and understand how to deploy a Corda application.
 
- ## identified inssues
+ ## Identified Issues
 
 Using Ansible to curl gradel5.4.1 from the distributor. The curl command would work manually, hence why the application was deployed manually. However, when using this command inside the yaml file the website could not be reached and returned an error. I have posted a question on stack overflow to help with this however while i wait i have attempted the following... I have tried to utilise the "user data" module inside the ec2 resource in terraform. in theory upon starting the instance on aws ,a bash script would be run installing gradel using the curl command. Although the script ran, the zip file still did not curl. For future self development i will try to install home-brew using the Ansible-playbook and then running a following play to install gradel 5.4.1 using brew.
 
 The AWS instance used to deploy the application was to small in ram. this was discovered when trying to build the nodes inside the sample application. The solution was to change the ec2 resource inside the terraform file has form a t2-micro to a t2 medium. 
 
- ## future impovements
+ ## Future Impovements
 * I would dockerise the application on the linux machine. A docker file would be created and placed onto the directory cordapp_exaple. this would be used to isolate part of the application. the image of the application can then be deployed using pehaps AWS EKS or docker swarm with multiple duplicates of this container to increase durability and scalability.
 
 * The Ansible files could be compacted into one. This way, it is more efficient because it will only take one command to run the playbook to set up the complete environment. The order of the tasks would go as follows, openJDK, gradle, git clone. For clarity it was separated for this task.
