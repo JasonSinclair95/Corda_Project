@@ -1,0 +1,23 @@
+---
+- hosts: servers
+  become: yes
+
+  tasks:
+    - name: Update all Ubuntu packages
+      apt:
+        upgrade: "dist"
+      when: ansible_distribution == 'Ubuntu'
+
+    - name: cache and valid time check
+      apt :
+        update_cache: yes
+        cache_valid_time: 3600
+        
+    - name: Install required Ubuntu packages
+      apt:
+        name: "{{ packages }}"
+        state: present
+      vars:
+        packages:
+          - openjdk-8-jdk
+          
