@@ -11,12 +11,9 @@
 
     - name: Unarchive a file that needs to be downloaded (added in 2.0)
       unarchive:
-        src: https\://services.gradle.org/distributions/gradle-5.4.1-bin.zip
-        dest: ~/
+        src: https://services.gradle.org/distributions/gradle-5.4.1-bin.zip
+        dest: "/opt/gradle"
         remote_src: yes
     
-    - name: deploy the cordapp
-      command: chdir=/samples-java/Basic/cordapp-example ./gradlew deployNodes
-
-   
+    
        
