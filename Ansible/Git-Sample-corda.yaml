@@ -6,5 +6,8 @@
     - name: git clone corda example
       git:
         repo: "https://github.com/corda/samples-java.git"
-        dest:  '/home/ubuntu/R3_project'
-  
+        dest:  "samples-java"
+    
+    - name: deploy the cordapp
+      command: chdir=samples-java/Basic/cordapp-example ./gradlew deployNodes
+
