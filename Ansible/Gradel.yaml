@@ -3,6 +3,9 @@
   become: yes
 
   tasks:
+    - name: install unzip
+      apt: name=zip state=latest
+      
     - name: create a Directory /opt/gradle
       file:
         path: ~/opt/gradel
