@@ -1,8 +1,11 @@
---- 
+  --- 
 - hosts: servers
   become: yes
 
   tasks:
+    - name: install unzip
+      apt: name=zip state=latest
+      
     - name: create a Directory /opt/gradle
       file:
         path: ~/opt/gradel
@@ -14,6 +17,4 @@
         src: https://services.gradle.org/distributions/gradle-5.4.1-bin.zip
         dest: "/opt/gradle"
         remote_src: yes
-    
-    
        
